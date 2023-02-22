@@ -1,0 +1,51 @@
+.example-card {
+  max-width: 260px;
+  min-width: 200px;
+}
+
+.example-header-image {
+  background-size: contain;
+}
+
+
+img.mat-card-md-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mat-card-content {
+  line-height: 1.2;
+  height: 3.6em;
+  /* 1.2em (line-height) x 3 (number of lines) */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.padding-top {
+  padding-top: 4rem;
+}
+
+.image-card-customs {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+mat-card-title {
+  color: black;
+}
+
+p {
+  color: black;
+}
+
+.mat-chip-text.mat-disabled {
+  opacity: 0.5;
+}
+
+.mat-chip.mat-disabled.mat-accent {
+  background-color: #bfbfbf;
+  border-color: #bfbfbf;
+}

@@ -1,0 +1,26 @@
+.mat-card-content {
+  line-height: 1.2;
+  height: 3.6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.image-card-customs {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+}
+
+mat-card-title {
+  color: black;
+}
+
+p {
+  color: black;
+}
+
+.container-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

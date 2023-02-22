@@ -1,0 +1,5 @@
+<mat-form-field class="search-grid" appearance="fill" color="warn">
+  <mat-label color="warn">Busca personajes</mat-label>
+  <input matInput placeholder="Placeholder" [(ngModel)]="terms" (keyup)="searchElements()" />
+  <mat-icon matSuffix color="warn">search</mat-icon>
+</mat-form-field>

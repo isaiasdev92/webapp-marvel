@@ -1,0 +1,58 @@
+<app-search class="my-floating-element" (searchEvent)="onSearch($event)"></app-search>
+
+<!-- <div class="spinner-container">
+  <mat-spinner diameter="50" *ngIf="isLoading" color="primary" mode="indeterminate"></mat-spinner>
+</div> -->
+<app-loading [isLoading]="isLoading"></app-loading>
+
+<mat-chip-listbox *ngIf="!isLoading" aria-label="Information Totales" color="warn">
+  <mat-chip>Total de personajes {{totalCharacters}}</mat-chip>
+  <mat-chip>Total cargados {{totalLoadView}}</mat-chip>
+</mat-chip-listbox>
+
+<mat-grid-list cols="5" rowHeight="1:1.9" gutterSize="10" *ngIf="!isLoading" infinite-scroll
+  [infiniteScrollDistance]="scrollDistance" [infiniteScrollUpDistance]="scrollUpDistance"
+  [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown(this)">
+
+  <mat-grid-tile *ngFor="let character of characters">
+    <div>
+      <mat-card #cardg #tdID (click)="openDialog(character.id)" class="example-card">
+        <mat-card-header>
+          <mat-card-title class="padding-top">{{character.name}}</mat-card-title>
+        </mat-card-header>
+
+        <img mat-card-md-image [src]="character.thumbnailUrl" alt="Photo of a Shiba Inu" class="image-card-customs">
+        <mat-card-content>
+          <p>{{character.description | slice:0:100}}...</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+
+<!-- <div class="loading" *ngIf="loading">Loading...</div> -->
+<!--
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Personajes</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="card-list">
+      <div class="card-item" *ngFor="let personaje of charactersTemp">
+        <mat-card>
+          <img mat-card-image [src]="personaje.thumbnail.path + '.' + personaje.thumbnail.extension"
+            alt="Imagen de {{ personaje.name }}" style="width: 100px; height: 100px;">
+          <mat-card-content>
+            <mat-card-title>{{ personaje.name }}</mat-card-title>
+            <p>{{ personaje.description }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+ -->
+<!-- </div> -->
